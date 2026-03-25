@@ -136,7 +136,7 @@ function Navbar({ onNavigate }: { onNavigate: (id: string) => void }) {
         <span style={{ width: 6, height: 6, borderRadius: "50%", background: COLORS.leafBright, display: "inline-block", marginBottom: 2 }} />
       </div>
       <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
-        {[["How It Works", "how"], ["Marketplace", "marketplace"], ["Impact", "impact"]].map(([label, id]) => (
+        {[["How It Works", "how"], ["Marketplace", "marketplace"], ["Impact", "impact"], ["Team", "team"]].map(([label, id]) => (
           <span key={id} onClick={() => onNavigate(id)} style={{
             fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: "rgba(245,240,232,0.7)",
             cursor: "pointer", letterSpacing: 0.5, textTransform: "uppercase" as const,
@@ -641,6 +641,90 @@ function Footer() {
   );
 }
 
+function Team({ id }: { id: string }) {
+  return (
+    <section id={id} style={{
+      background: COLORS.warmWhite, padding: "120px 40px",
+    }}>
+      <div style={{ maxWidth: 800, margin: "0 auto" }}>
+        <FadeIn>
+          <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 500, color: COLORS.leaf, letterSpacing: 3, textTransform: "uppercase" as const }}>Who We Are</span>
+          <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(36px, 5vw, 52px)", color: COLORS.soil, margin: "12px 0 16px", fontWeight: 400, lineHeight: 1.15 }}>
+            Built by people who&apos;ve<br />done the work.
+          </h2>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, color: "#666", maxWidth: 600, lineHeight: 1.7, marginBottom: 64 }}>
+            Raíz isn&apos;t built on theory. It&apos;s built on years of fieldwork, research, and direct relationships with the farming communities we serve.
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={0.15}>
+          <div style={{
+            background: "white", borderRadius: 16, padding: 48,
+            border: "1px solid rgba(26,26,14,0.06)",
+            boxShadow: "0 2px 20px rgba(26,26,14,0.04)",
+          }}>
+            <div style={{ display: "flex", gap: 32, alignItems: "flex-start", flexWrap: "wrap" }}>
+              {/* Avatar placeholder */}
+              <div style={{
+                width: 96, height: 96, borderRadius: "50%", flexShrink: 0,
+                background: `linear-gradient(135deg, ${COLORS.canopy}, ${COLORS.leaf})`,
+                display: "flex", alignItems: "center", justifyContent: "center",
+              }}>
+                <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 36, color: COLORS.cream }}>JS</span>
+              </div>
+
+              <div style={{ flex: 1, minWidth: 280 }}>
+                <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: COLORS.soil, fontWeight: 400, margin: "0 0 4px" }}>Joshua Spitaleri</h3>
+                <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: COLORS.leaf, letterSpacing: 0.5, textTransform: "uppercase" as const }}>Founder</span>
+
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "20px 0 0" }}>
+                  Josh brings an unusual combination of agricultural development experience and enterprise technology architecture to Raíz. He holds a Master&apos;s in International Agriculture from Oklahoma State University, where his research focused on smallholder coffee production economics in Laos. His fieldwork includes direct agricultural extension with coffee farming communities in both Laos and Guatemala — conducting site analysis, establishing composting and regenerative practice programs, and evaluating value chains for smallholder producers.
+                </p>
+
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "16px 0 0" }}>
+                  Josh founded Out There Coffee Co., sourcing directly from smallholder farmers and roasting and selling through a direct-to-consumer model. His Lao-origin coffee became the company&apos;s most popular product — an early proof of concept that smallholder-sourced, origin-story-driven specialty coffee commands real market demand.
+                </p>
+
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "16px 0 0" }}>
+                  Before Raíz, Josh spent over a decade in enterprise systems architecture and cybersecurity engineering, designing identity management and cloud infrastructure for organizations including Biogen, Carfax, and Oklahoma State University. This dual background — boots-on-the-ground agricultural development paired with enterprise-grade technology design — is what enables Raíz to operate as a tech platform rather than a traditional NGO.
+                </p>
+
+                <div style={{ display: "flex", gap: 16, marginTop: 24, flexWrap: "wrap" }}>
+                  {[
+                    "M.S. International Agriculture — Oklahoma State",
+                    "Humphreys Research Grant — Laos",
+                    "ECHO Conference Presenter — Guatemala",
+                    "Phi Beta Delta International Scholars",
+                  ].map((tag, i) => (
+                    <span key={i} style={{
+                      fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: COLORS.canopy,
+                      background: COLORS.creamDark, borderRadius: 20, padding: "6px 14px",
+                      letterSpacing: 0.3,
+                    }}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.3}>
+          <div style={{
+            marginTop: 40, padding: "32px 40px",
+            background: "white", borderRadius: 12,
+            border: `1px dashed ${COLORS.creamDark}`,
+            textAlign: "center",
+          }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#999", lineHeight: 1.6, margin: 0 }}>
+              Additional team members and university research partners will be announced as pilot operations begin.
+            </p>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const navigate = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -655,6 +739,7 @@ export default function Home() {
       <Pillars id="pillars" />
       <Marketplace id="marketplace" />
       <Impact id="impact" />
+      <Team id="team" />
       <Footer />
     </div>
   );
