@@ -283,7 +283,7 @@ function HowItWorks({ id }: { id: string }) {
             Extension. Certification.<br />Carbon. Market Access.
           </h2>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, color: "#666", maxWidth: 600, lineHeight: 1.7, marginBottom: 64 }}>
-            One organization. One flywheel. The entity that helps farmers improve is the same one that certifies and monetizes those improvements.
+            One organization. One flywheel. The entity that helps farmers improve is the same one that certifies and funds those improvements.
           </p>
         </FadeIn>
 
