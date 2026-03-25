@@ -710,13 +710,64 @@ function Team({ id }: { id: string }) {
 
         <FadeIn delay={0.3}>
           <div style={{
+            background: "white", borderRadius: 16, padding: 48, marginTop: 32,
+            border: "1px solid rgba(26,26,14,0.06)",
+            boxShadow: "0 2px 20px rgba(26,26,14,0.04)",
+          }}>
+            <div style={{ display: "flex", gap: 32, alignItems: "flex-start", flexWrap: "wrap" }}>
+              <div style={{
+                width: 96, height: 96, borderRadius: "50%", flexShrink: 0,
+                background: `linear-gradient(135deg, ${COLORS.bark}, ${COLORS.clay})`,
+                display: "flex", alignItems: "center", justifyContent: "center",
+              }}>
+                <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 36, color: COLORS.cream }}>AC</span>
+              </div>
+
+              <div style={{ flex: 1, minWidth: 280 }}>
+                <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: COLORS.soil, fontWeight: 400, margin: "0 0 4px" }}>Dr. Adam Cobb</h3>
+                <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: COLORS.leaf, letterSpacing: 0.5, textTransform: "uppercase" as const }}>Chief Science Officer</span>
+
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "20px 0 0" }}>
+                  Dr. Cobb brings deep scientific expertise in soil ecology, mycorrhizal biology, and regenerative land management to Raíz. He holds a PhD in Natural Resource Ecology and Management from Oklahoma State University, where he served as a postdoctoral research fellow and graduate faculty member for over a decade. His research has produced more than 20 peer-reviewed publications and secured approximately $330,000 in competitive grants, including a USDA NIFA-AFRI Postdoctoral Fellowship.
+                </p>
+
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "16px 0 0" }}>
+                  Adam&apos;s work extends well beyond the lab. He currently consults with international organizations including the African Cotton Foundation, Aid by Trade Foundation, and Cotton Made in Africa — deploying climate-smart and regenerative practices in smallholder agricultural communities across the Global South. He has presented on soil biology and regenerative agriculture at venues ranging from COP28 to regional farming cooperatives.
+                </p>
+
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "16px 0 0" }}>
+                  As founder of Holobiont Hub, Adam has built a global community around open-access soil science education and regenerative practice. His combination of rigorous research credentials, field experience in developing-world agriculture, and commitment to accessible science communication makes him the ideal architect of Raíz&apos;s verification methodology and certification standard.
+                </p>
+
+                <div style={{ display: "flex", gap: 16, marginTop: 24, flexWrap: "wrap" }}>
+                  {[
+                    "Ph.D. Natural Resource Ecology — Oklahoma State",
+                    "USDA NIFA-AFRI Fellow",
+                    "20+ Peer-Reviewed Publications",
+                    "COP28 Presenter",
+                    "Cotton Made in Africa Consultant",
+                  ].map((tag, i) => (
+                    <span key={i} style={{
+                      fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: COLORS.canopy,
+                      background: COLORS.creamDark, borderRadius: 20, padding: "6px 14px",
+                      letterSpacing: 0.3,
+                    }}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.45}>
+          <div style={{
             marginTop: 40, padding: "32px 40px",
             background: "white", borderRadius: 12,
             border: `1px dashed ${COLORS.creamDark}`,
             textAlign: "center",
           }}>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#999", lineHeight: 1.6, margin: 0 }}>
-              Additional team members and university research partners will be announced as pilot operations begin.
+              Additional team members and local extension leads in Guatemala and Laos will be announced as pilot operations begin.
             </p>
           </div>
         </FadeIn>
