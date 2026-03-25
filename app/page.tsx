@@ -313,6 +313,51 @@ function HowItWorks({ id }: { id: string }) {
   );
 }
 
+function Fieldwork({ id }: { id: string }) {
+  const photos = [
+    { src: "/images/field-coffee.jpg", caption: "Sorting coffee beans with smallholder producers, Laos" },
+    { src: "/images/field-compost.jpg", caption: "Building composting infrastructure with farming community, Laos" },
+  ];
+
+  return (
+    <section id={id} style={{
+      background: COLORS.creamDark, padding: "80px 40px",
+    }}>
+      <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+        <FadeIn>
+          <div style={{ textAlign: "center", marginBottom: 48 }}>
+            <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 500, color: COLORS.leaf, letterSpacing: 3, textTransform: "uppercase" as const }}>On The Ground</span>
+            <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(28px, 4vw, 40px)", color: COLORS.soil, margin: "12px 0 0", fontWeight: 400 }}>
+              This work is already underway.
+            </h2>
+          </div>
+        </FadeIn>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: 24 }}>
+          {photos.map((p, i) => (
+            <FadeIn key={i} delay={i * 0.15}>
+              <div style={{
+                borderRadius: 12, overflow: "hidden",
+                boxShadow: "0 4px 24px rgba(26,26,14,0.1)",
+              }}>
+                <div style={{ position: "relative", paddingBottom: "66%", background: COLORS.soil }}>
+                  <img src={p.src} alt={p.caption} style={{
+                    position: "absolute", top: 0, left: 0, width: "100%", height: "100%",
+                    objectFit: "cover",
+                  }} />
+                </div>
+                <div style={{ padding: "16px 20px", background: "white" }}>
+                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: "#777", margin: 0, lineHeight: 1.5 }}>{p.caption}</p>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Pillars({ id }: { id: string }) {
   return (
     <section id={id} style={{
@@ -664,13 +709,12 @@ function Team({ id }: { id: string }) {
             boxShadow: "0 2px 20px rgba(26,26,14,0.04)",
           }}>
             <div style={{ display: "flex", gap: 32, alignItems: "flex-start", flexWrap: "wrap" }}>
-              {/* Avatar placeholder */}
+              {/* Josh profile photo */}
               <div style={{
                 width: 96, height: 96, borderRadius: "50%", flexShrink: 0,
-                background: `linear-gradient(135deg, ${COLORS.canopy}, ${COLORS.leaf})`,
-                display: "flex", alignItems: "center", justifyContent: "center",
+                overflow: "hidden",
               }}>
-                <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 36, color: COLORS.cream }}>JS</span>
+                <img src="/images/josh-profile.jpg" alt="Joshua Spitaleri" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
               </div>
 
               <div style={{ flex: 1, minWidth: 280 }}>
@@ -717,10 +761,9 @@ function Team({ id }: { id: string }) {
             <div style={{ display: "flex", gap: 32, alignItems: "flex-start", flexWrap: "wrap" }}>
               <div style={{
                 width: 96, height: 96, borderRadius: "50%", flexShrink: 0,
-                background: `linear-gradient(135deg, ${COLORS.bark}, ${COLORS.clay})`,
-                display: "flex", alignItems: "center", justifyContent: "center",
+                overflow: "hidden",
               }}>
-                <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 36, color: COLORS.cream }}>AC</span>
+                <img src="/images/adam-profile.jpg" alt="Dr. Adam Cobb" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
               </div>
 
               <div style={{ flex: 1, minWidth: 280 }}>
@@ -787,6 +830,7 @@ export default function Home() {
       <Navbar onNavigate={navigate} />
       <Hero id="hero" />
       <HowItWorks id="how" />
+      <Fieldwork id="fieldwork" />
       <Pillars id="pillars" />
       <Marketplace id="marketplace" />
       <Impact id="impact" />
