@@ -410,9 +410,22 @@ function Marketplace({ id }: { id: string }) {
   const [formData, setFormData] = useState({ name: "", company: "", role: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (formData.email && formData.name) {
-      setSubmitted(true);
+      try {
+        await fetch("https://formspree.io/f/mqegypde", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...formData,
+            tier: selectedTier,
+            _subject: `Raíz ${selectedTier} Partnership Application — ${formData.company}`,
+          }),
+        });
+        setSubmitted(true);
+      } catch {
+        setSubmitted(true);
+      }
     }
   };
 
