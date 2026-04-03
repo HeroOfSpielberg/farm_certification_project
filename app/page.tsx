@@ -25,7 +25,7 @@ const TIERS = [
     period: "/year",
     description: "For brands beginning their regenerative journey",
     features: [
-      "Sponsor 10 smallholder farms through transition",
+      "Fund regenerative transition for smallholder farming communities",
       "Quarterly impact reports with farm-level data",
       "Raíz Partner badge for marketing use",
       "Access to public impact dashboard",
@@ -40,7 +40,7 @@ const TIERS = [
     period: "/year",
     description: "For companies building regenerative supply chains",
     features: [
-      "Sponsor 50+ farms across Guatemala & Laos",
+      "Dedicated partnership across Guatemala & Laos operations",
       "Monthly impact reports with satellite verification",
       "Raíz Certified sourcing rights for your products",
       "Named community partnership (your brand on the ground)",
@@ -56,7 +56,7 @@ const TIERS = [
     period: "",
     description: "For enterprises transforming entire supply chains",
     features: [
-      "Full geography sponsorship (country-level impact)",
+      "Multi-geography sponsorship scaled to your goals",
       "Custom methodology co-development",
       "White-label dashboard for your ESG reporting",
       "Priority carbon credit access at preferential rates",
@@ -407,7 +407,7 @@ function Pillars({ id }: { id: string }) {
 
 function Marketplace({ id }: { id: string }) {
   const [selectedTier, setSelectedTier] = useState<string | null>(null);
-  const [formData, setFormData] = useState({ name: "", company: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", company: "", role: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = () => {
@@ -428,7 +428,7 @@ function Marketplace({ id }: { id: string }) {
             Invest in regeneration.<br />Own the story.
           </h2>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, color: "#666", maxWidth: 600, lineHeight: 1.7, marginBottom: 64 }}>
-            Corporate partnerships fund direct extension services and carbon verification for smallholder farming communities. Every dollar is tracked, every impact is measured, everything is public.
+            We partner selectively with companies whose sustainability goals align with our farming communities. Every partnership funds direct extension services and verified impact. Every dollar is tracked, everything is public.
           </p>
         </FadeIn>
 
@@ -485,7 +485,7 @@ function Marketplace({ id }: { id: string }) {
                   onMouseEnter={e => { (e.target as HTMLElement).style.opacity = "0.9"; (e.target as HTMLElement).style.transform = "translateY(-1px)"; }}
                   onMouseLeave={e => { (e.target as HTMLElement).style.opacity = "1"; (e.target as HTMLElement).style.transform = "translateY(0)"; }}
                 >
-                  {tier.price === "Custom" ? "Contact Us" : "Start Partnership"}
+                  {tier.price === "Custom" ? "Apply Now" : "Apply for Partnership"}
                 </button>
               </div>
             </FadeIn>
@@ -502,24 +502,25 @@ function Marketplace({ id }: { id: string }) {
               {submitted ? (
                 <div style={{ textAlign: "center", padding: "20px 0" }}>
                   <div style={{ fontSize: 48, marginBottom: 16 }}>🌱</div>
-                  <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: COLORS.soil, fontWeight: 400, margin: "0 0 12px" }}>We&apos;ll be in touch.</h3>
+                  <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: COLORS.soil, fontWeight: 400, margin: "0 0 12px" }}>Application received.</h3>
                   <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: "#777", lineHeight: 1.6 }}>
-                    Thank you for your interest in the {selectedTier} partnership. We&apos;ll reach out within 48 hours to discuss next steps.
+                    Thank you for applying to the {selectedTier} partnership. We review applications within 5 business days and will be in touch to discuss fit and next steps.
                   </p>
                 </div>
               ) : (
                 <>
                   <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: COLORS.soil, fontWeight: 400, margin: "0 0 8px" }}>
-                    {selectedTier} Partnership Inquiry
+                    {selectedTier} Partnership Application
                   </h3>
                   <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#888", margin: "0 0 32px" }}>
-                    Tell us about your organization and sustainability goals.
+                    We review every application to ensure alignment between your sustainability goals and our farming communities. Tell us about your organization.
                   </p>
 
                   {[
                     { key: "name", label: "Your Name", type: "text" },
                     { key: "company", label: "Company", type: "text" },
-                    { key: "email", label: "Email", type: "email" },
+                    { key: "role", label: "Your Role", type: "text" },
+                    { key: "email", label: "Work Email", type: "email" },
                   ].map(field => (
                     <div key={field.key} style={{ marginBottom: 20 }}>
                       <label style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: "#999", letterSpacing: 0.5, textTransform: "uppercase" as const, display: "block", marginBottom: 8 }}>
@@ -559,7 +560,7 @@ function Marketplace({ id }: { id: string }) {
                       }}
                       onFocus={e => (e.target as HTMLElement).style.borderColor = COLORS.leaf}
                       onBlur={e => (e.target as HTMLElement).style.borderColor = COLORS.creamDark}
-                      placeholder="Tell us about your sustainability goals, supply chain interests, or questions..."
+                      placeholder="What are your organization's sustainability goals? What draws you to Raíz's model? Any specific crops, regions, or impact areas of interest?"
                     />
                   </div>
 
@@ -572,7 +573,7 @@ function Marketplace({ id }: { id: string }) {
                   }}
                   onMouseEnter={e => { (e.target as HTMLElement).style.background = COLORS.gold; }}
                   onMouseLeave={e => { (e.target as HTMLElement).style.background = COLORS.goldLight; }}
-                  >Submit Inquiry</button>
+                  >Submit Application</button>
                 </>
               )}
             </div>
