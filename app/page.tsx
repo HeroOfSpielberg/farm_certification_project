@@ -23,24 +23,24 @@ const PROJECTS = [
     title: "Yepocapa Specialty Processing Facility",
     location: "San Pedro Yepocapa, Guatemala",
     status: "Seeking Funding",
-    description: "A specialty coffee processing facility in Guatemala\u2019s Antigua region \u2014 including post-harvest processing focused on quality, a cupping lab for farmer feedback, and a roastery tied to local training and education. This facility would serve hundreds of smallholder producers, opening the region to specialty markets and creating an alternative pathway beyond the middlemen who currently pay well below market rate.",
-    need: "Post-harvest infrastructure is the critical bottleneck. Existing wet mills optimize for volume, not quality. Farmers can\u2019t access specialty prices without specialty processing.",
+    description: "A specialty coffee processing facility in Guatemala's Antigua region — including post-harvest processing focused on quality, a cupping lab for farmer feedback, and a roastery tied to local training and education. This facility would serve hundreds of smallholder producers, opening the region to specialty markets and creating an alternative pathway beyond the middlemen who currently pay well below market rate.",
+    need: "Post-harvest infrastructure is the critical bottleneck. Existing wet mills optimize for volume, not quality. Farmers can't access specialty prices without specialty processing.",
     partner: "Developed in collaboration with Dr. Taya Brown (Texas A&M) and Devon Barker, who have worked in this community for over seven years.",
     tags: ["Coffee", "Guatemala", "Infrastructure", "Market Access"],
   },
   {
     title: "Laos Smallholder Coffee & Agroforestry Program",
     location: "Lao PDR",
-    status: "Active \u2014 Cooperative Engaged",
+    status: "Active — Cooperative Engaged",
     description: "Extension support and regenerative practice development for a smallholder coffee cooperative in Laos. Focus on shade canopy optimization, composting systems, soil health improvement, and connecting producers to specialty export markets where Lao-origin coffee commands premium prices.",
     need: "Farmers lack technical support for regenerative transitions and have limited access to markets that reward quality. Extension services are sparse in rural Lao coffee regions.",
-    partner: "Building on Ra\u00edz founder Joshua Spitaleri\u2019s prior fieldwork establishing composting programs and conducting agricultural extension with Lao farming communities.",
+    partner: "Building on Raíz founder Joshua Spitaleri's prior fieldwork establishing composting programs and conducting agricultural extension with Lao farming communities.",
     tags: ["Coffee", "Laos", "Agroforestry", "Extension"],
   },
   {
-    title: "Guatemala Coffee Cooperative \u2014 Regenerative Transition",
+    title: "Guatemala Coffee Cooperative — Regenerative Transition",
     location: "Guatemala",
-    status: "Active \u2014 Cooperative Engaged",
+    status: "Active — Cooperative Engaged",
     description: "Supporting an established coffee cooperative through the transition to verified regenerative practices. Includes baseline soil sampling, individualized farm plans, shade tree diversification, and building the data infrastructure needed for certification and carbon quantification.",
     need: "Cooperatives have the farmer relationships but lack resources for soil science, data collection, and the technical guidance needed to access regenerative and carbon markets.",
     partner: "Working directly with cooperative leadership to ensure all priorities are community-defined.",
@@ -56,11 +56,11 @@ const METRICS = [
 ];
 
 const PILLARS = [
-  { icon: "\u25c9", name: "Soil Health", desc: "Organic matter, microbial biomass, aggregate stability \u2014 measured annually, tracked continuously" },
-  { icon: "\u25ce", name: "Carbon", desc: "Soil organic carbon + above-ground biomass, quantified with published methodology and satellite verification" },
-  { icon: "\u275b", name: "Biodiversity", desc: "Shade tree diversity, pollinator habitat, ground cover \u2014 quarterly transects and photo monitoring" },
-  { icon: "\u25c8", name: "Water", desc: "Infiltration rates, erosion control, riparian buffers \u2014 protecting watersheds farm by farm" },
-  { icon: "\u25c7", name: "Community", desc: "Income growth, knowledge transfer, cooperative health, gender inclusion \u2014 because regeneration is human too" },
+  { icon: "◉", name: "Soil Health", desc: "Organic matter, microbial biomass, aggregate stability — measured annually, tracked continuously" },
+  { icon: "◎", name: "Carbon", desc: "Soil organic carbon + above-ground biomass, quantified with published methodology and satellite verification" },
+  { icon: "❋", name: "Biodiversity", desc: "Shade tree diversity, pollinator habitat, ground cover — quarterly transects and photo monitoring" },
+  { icon: "◈", name: "Water", desc: "Infiltration rates, erosion control, riparian buffers — protecting watersheds farm by farm" },
+  { icon: "◇", name: "Community", desc: "Income growth, knowledge transfer, cooperative health, gender inclusion — because regeneration is human too" },
 ];
 
 function useInView(threshold = 0.15) {
@@ -106,7 +106,7 @@ function Navbar({ onNavigate }: { onNavigate: (id: string) => void }) {
       transition: "all 0.4s ease",
     }}>
       <div style={{ display: "flex", alignItems: "baseline", gap: 6, cursor: "pointer" }} onClick={() => onNavigate("hero")}>
-        <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: COLORS.cream, letterSpacing: -0.5 }}>Ra\u00edz</span>
+        <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: COLORS.cream, letterSpacing: -0.5 }}>Raíz</span>
         <span style={{ width: 6, height: 6, borderRadius: "50%", background: COLORS.leafBright, display: "inline-block", marginBottom: 2 }} />
       </div>
       <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
@@ -155,7 +155,7 @@ function Hero({ id }: { id: string }) {
           The people who grow it<br /><span style={{ color: COLORS.goldLight }}>should profit from it.</span>
         </h1>
         <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 20, lineHeight: 1.7, color: "rgba(245,240,232,0.65)", maxWidth: 620, margin: "0 auto 48px", opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(30px)", transition: "all 1s ease 0.6s" }}>
-          Ra\u00edz connects corporate sustainability investment directly to community-identified projects in smallholder coffee and cacao farming communities \u2014 with radical transparency and university-verified impact.
+          Raíz connects corporate sustainability investment directly to community-identified projects in smallholder coffee and cacao farming communities — with radical transparency and university-verified impact.
         </p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(30px)", transition: "all 1s ease 0.8s" }}>
           <button onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.soil, background: COLORS.goldLight, border: "none", borderRadius: 8, padding: "16px 40px", cursor: "pointer", letterSpacing: 0.5, transition: "all 0.3s" }}
@@ -182,9 +182,9 @@ function Hero({ id }: { id: string }) {
 
 function HowItWorks({ id }: { id: string }) {
   const steps = [
-    { num: "01", title: "Communities identify priorities", desc: "Ra\u00edz doesn\u2019t prescribe solutions. Farming communities and their local partners identify what they need \u2014 whether that\u2019s processing infrastructure, soil rehabilitation, market access, or technical training. We listen first, then fund." },
-    { num: "02", title: "We embed expertise on the ground", desc: "Ra\u00edz works with local agronomists, university researchers, extension agents, and community scientists who already have deep relationships in the regions we serve. Our team brings evidence-based approaches \u2014 soil and leaf sampling, farmer interviews, context-specific recommendations \u2014 not outside prescriptions." },
-    { num: "03", title: "Improvement generates data", desc: "Every farm interaction produces data \u2014 soil samples, GPS-mapped boundaries, canopy photographs, practice records. Combined with satellite remote sensing, this creates a continuous picture of regeneration that no annual audit can match." },
+    { num: "01", title: "Communities identify priorities", desc: "Raíz doesn't prescribe solutions. Farming communities and their local partners identify what they need — whether that's processing infrastructure, soil rehabilitation, market access, or technical training. We listen first, then fund." },
+    { num: "02", title: "We embed expertise on the ground", desc: "Raíz works with local agronomists, university researchers, extension agents, and community scientists who already have deep relationships in the regions we serve. Our team brings evidence-based approaches — soil and leaf sampling, farmer interviews, context-specific recommendations — not outside prescriptions." },
+    { num: "03", title: "Improvement generates data", desc: "Every farm interaction produces data — soil samples, GPS-mapped boundaries, canopy photographs, practice records. Combined with satellite remote sensing, this creates a continuous picture of regeneration that no annual audit can match." },
     { num: "04", title: "Your investment flows to producers", desc: "Corporate partners fund specific, community-defined projects. A minimum of 60% of all revenue returns directly to farming communities. Every dollar is tracked, every impact is published on our public ledger." },
   ];
 
@@ -197,7 +197,7 @@ function HowItWorks({ id }: { id: string }) {
             Community-led. Rigorously verified.<br />Radically transparent.
           </h2>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, color: "#666", maxWidth: 640, lineHeight: 1.7, marginBottom: 64 }}>
-            One organization. One flywheel. The entity that helps farmers improve is the same one that certifies and funds those improvements \u2014 with independent, university-affiliated verification for credibility.
+            One organization. One flywheel. The entity that helps farmers improve is the same one that certifies and funds those improvements — with independent, university-affiliated verification for credibility.
           </p>
         </FadeIn>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32 }}>
@@ -259,7 +259,7 @@ function Pillars({ id }: { id: string }) {
         <FadeIn>
           <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 500, color: COLORS.leafBright, letterSpacing: 3, textTransform: "uppercase" as const }}>Beyond Carbon</span>
           <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(36px, 5vw, 52px)", color: COLORS.cream, margin: "12px 0 16px", fontWeight: 400, lineHeight: 1.15 }}>Five pillars of regeneration</h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, color: "rgba(245,240,232,0.55)", maxWidth: 560, lineHeight: 1.7, marginBottom: 64 }}>Carbon is one piece. We measure holistic regeneration \u2014 because a farm that sequesters carbon but destroys biodiversity isn&apos;t regenerative.</p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, color: "rgba(245,240,232,0.55)", maxWidth: 560, lineHeight: 1.7, marginBottom: 64 }}>Carbon is one piece. We measure holistic regeneration — because a farm that sequesters carbon but destroys biodiversity isn&apos;t regenerative.</p>
         </FadeIn>
         <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
           {PILLARS.map((p, i) => (
@@ -293,7 +293,7 @@ function Projects({ id }: { id: string }) {
         await fetch("https://formspree.io/f/mqegypde", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...formData, project: selectedProject || "General Fund", _subject: `Ra\u00edz Partnership Application \u2014 ${selectedProject || "General Fund"} \u2014 ${formData.company}` }),
+          body: JSON.stringify({ ...formData, project: selectedProject || "General Fund", _subject: `Raíz Partnership Application — ${selectedProject || "General Fund"} — ${formData.company}` }),
         });
         setSubmitted(true);
       } catch { setSubmitted(true); }
@@ -308,7 +308,7 @@ function Projects({ id }: { id: string }) {
         <FadeIn>
           <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 500, color: COLORS.leaf, letterSpacing: 3, textTransform: "uppercase" as const }}>Fund Real Projects</span>
           <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(36px, 5vw, 52px)", color: COLORS.soil, margin: "12px 0 16px", fontWeight: 400, lineHeight: 1.15 }}>Community-identified.<br />Transparently funded.</h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, color: "#666", maxWidth: 640, lineHeight: 1.7, marginBottom: 64 }}>Every project below was identified by the farming communities and local partners we work with. Your investment goes directly to the priorities they&apos;ve defined \u2014 not what we decided they need from a distance.</p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, color: "#666", maxWidth: 640, lineHeight: 1.7, marginBottom: 64 }}>Every project below was identified by the farming communities and local partners we work with. Your investment goes directly to the priorities they&apos;ve defined — not what we decided they need from a distance.</p>
         </FadeIn>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 24, marginBottom: 40 }}>
@@ -384,7 +384,7 @@ function Projects({ id }: { id: string }) {
                     <textarea rows={4} value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })} style={{ ...inputStyle, resize: "vertical" as const }}
                     onFocus={e => (e.target as HTMLElement).style.borderColor = COLORS.leaf}
                     onBlur={e => (e.target as HTMLElement).style.borderColor = COLORS.creamDark}
-                    placeholder="What are your organization's sustainability goals? What draws you to this project or to Ra\u00edz's model?" />
+                    placeholder="What are your organization's sustainability goals? What draws you to this project or to Raíz's model?" />
                   </div>
                   <button onClick={handleSubmit} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, fontWeight: 600, color: COLORS.soil, background: COLORS.goldLight, border: "none", borderRadius: 8, padding: "16px 0", cursor: "pointer", letterSpacing: 0.5, width: "100%", transition: "all 0.3s" }}
                   onMouseEnter={e => { (e.target as HTMLElement).style.background = COLORS.gold; }}
@@ -414,7 +414,7 @@ function Impact({ id }: { id: string }) {
             { title: "Public Data Ledger", desc: "All farm-level data, soil samples, satellite imagery, and credit issuance published openly. Anyone can audit our claims." },
             { title: "University Verification", desc: "Independent ground-truthing by university-affiliated researchers. Their reputation depends on rigor, not our revenue." },
             { title: "Published Methodology", desc: "Our carbon quantification methodology is open for peer review. We improve it publicly, not behind closed doors." },
-            { title: "Revenue Transparency", desc: "Every partnership\u2019s revenue flow is published: what came in, what went to farmers, what funded operations. No black boxes." },
+            { title: "Revenue Transparency", desc: "Every partnership's revenue flow is published: what came in, what went to farmers, what funded operations. No black boxes." },
           ].map((item, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <div style={{ background: "rgba(245,240,232,0.05)", borderRadius: 12, padding: 32, border: "1px solid rgba(245,240,232,0.08)", transition: "all 0.3s" }}
@@ -428,7 +428,7 @@ function Impact({ id }: { id: string }) {
         </div>
         <FadeIn delay={0.5}>
           <div style={{ marginTop: 80, padding: "48px 40px", background: "rgba(201,162,39,0.08)", borderRadius: 16, border: "1px solid rgba(201,162,39,0.15)", textAlign: "center" }}>
-            <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: COLORS.cream, fontWeight: 400, margin: "0 0 16px" }}>Carbon Credits \u2014 Coming Soon</h3>
+            <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: COLORS.cream, fontWeight: 400, margin: "0 0 16px" }}>Carbon Credits — Coming Soon</h3>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 16, color: "rgba(245,240,232,0.6)", lineHeight: 1.7, maxWidth: 500, margin: "0 auto 24px" }}>Our pilot farms in Guatemala and Laos are establishing baselines now. Forward commitments for verified carbon credits will be available to partnership-tier sponsors first.</p>
             <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 500, color: COLORS.goldLight, letterSpacing: 1, textTransform: "uppercase" as const }}>Pilot Credits Expected Q4 2026</span>
           </div>
@@ -445,7 +445,7 @@ function Team({ id }: { id: string }) {
         <FadeIn>
           <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, fontWeight: 500, color: COLORS.leaf, letterSpacing: 3, textTransform: "uppercase" as const }}>Who We Are</span>
           <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(36px, 5vw, 52px)", color: COLORS.soil, margin: "12px 0 16px", fontWeight: 400, lineHeight: 1.15 }}>Built by people who&apos;ve<br />done the work.</h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, color: "#666", maxWidth: 600, lineHeight: 1.7, marginBottom: 64 }}>Ra\u00edz isn&apos;t built on theory. It&apos;s built on years of fieldwork, research, and direct relationships with the farming communities we serve.</p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 18, color: "#666", maxWidth: 600, lineHeight: 1.7, marginBottom: 64 }}>Raíz isn&apos;t built on theory. It&apos;s built on years of fieldwork, research, and direct relationships with the farming communities we serve.</p>
         </FadeIn>
 
         <FadeIn delay={0.15}>
@@ -457,11 +457,11 @@ function Team({ id }: { id: string }) {
               <div style={{ flex: 1, minWidth: 280 }}>
                 <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: COLORS.soil, fontWeight: 400, margin: "0 0 4px" }}>Joshua Spitaleri</h3>
                 <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: COLORS.leaf, letterSpacing: 0.5, textTransform: "uppercase" as const }}>Founder</span>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "20px 0 0" }}>Josh brings an unusual combination of agricultural development experience and enterprise technology architecture to Ra\u00edz. He holds a Master&apos;s in International Agriculture from Oklahoma State University, where his research focused on smallholder coffee production economics in Laos. His fieldwork includes direct agricultural extension with coffee farming communities in both Laos and Guatemala \u2014 conducting site analysis, establishing composting and regenerative practice programs, and evaluating value chains for smallholder producers.</p>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "16px 0 0" }}>Josh founded Out There Coffee Co., sourcing directly from smallholder farmers and roasting and selling through a direct-to-consumer model. His Lao-origin coffee became the company&apos;s most popular product \u2014 an early proof of concept that smallholder-sourced, origin-story-driven specialty coffee commands real market demand.</p>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "16px 0 0" }}>Before Ra\u00edz, Josh spent over a decade in enterprise systems architecture and cybersecurity engineering, designing identity management and cloud infrastructure for organizations including Biogen, Carfax, and Oklahoma State University. This dual background \u2014 boots-on-the-ground agricultural development paired with enterprise-grade technology design \u2014 is what enables Ra\u00edz to operate as a tech platform rather than a traditional NGO.</p>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "20px 0 0" }}>Josh brings an unusual combination of agricultural development experience and enterprise technology architecture to Raíz. He holds a Master&apos;s in International Agriculture from Oklahoma State University, where his research focused on smallholder coffee production economics in Laos. His fieldwork includes direct agricultural extension with coffee farming communities in both Laos and Guatemala — conducting site analysis, establishing composting and regenerative practice programs, and evaluating value chains for smallholder producers.</p>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "16px 0 0" }}>Josh founded Out There Coffee Co., sourcing directly from smallholder farmers and roasting and selling through a direct-to-consumer model. His Lao-origin coffee became the company&apos;s most popular product — an early proof of concept that smallholder-sourced, origin-story-driven specialty coffee commands real market demand.</p>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "16px 0 0" }}>Before Raíz, Josh spent over a decade in enterprise systems architecture and cybersecurity engineering, designing identity management and cloud infrastructure for organizations including Biogen, Carfax, and Oklahoma State University. This dual background — boots-on-the-ground agricultural development paired with enterprise-grade technology design — is what enables Raíz to operate as a tech platform rather than a traditional NGO.</p>
                 <div style={{ display: "flex", gap: 16, marginTop: 24, flexWrap: "wrap" }}>
-                  {["M.S. International Agriculture \u2014 Oklahoma State", "Humphreys Research Grant \u2014 Laos", "ECHO Conference Presenter \u2014 Guatemala", "Phi Beta Delta International Scholars"].map((tag, i) => (
+                  {["M.S. International Agriculture — Oklahoma State", "Humphreys Research Grant — Laos", "ECHO Conference Presenter — Guatemala", "Phi Beta Delta International Scholars"].map((tag, i) => (
                     <span key={i} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: COLORS.canopy, background: COLORS.creamDark, borderRadius: 20, padding: "6px 14px", letterSpacing: 0.3 }}>{tag}</span>
                   ))}
                 </div>
@@ -479,11 +479,11 @@ function Team({ id }: { id: string }) {
               <div style={{ flex: 1, minWidth: 280 }}>
                 <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 28, color: COLORS.soil, fontWeight: 400, margin: "0 0 4px" }}>Dr. Adam Cobb</h3>
                 <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: COLORS.leaf, letterSpacing: 0.5, textTransform: "uppercase" as const }}>Chief Science Officer</span>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "20px 0 0" }}>Dr. Cobb brings deep scientific expertise in soil ecology, mycorrhizal biology, and regenerative land management to Ra\u00edz. He holds a PhD in Natural Resource Ecology and Management from Oklahoma State University, where he served as a postdoctoral research fellow and graduate faculty member for over a decade. His research has produced more than 20 peer-reviewed publications and secured approximately $330,000 in competitive grants, including a USDA NIFA-AFRI Postdoctoral Fellowship.</p>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "16px 0 0" }}>Adam&apos;s work extends well beyond the lab. He currently consults with international organizations including the African Cotton Foundation, Aid by Trade Foundation, and Cotton Made in Africa \u2014 deploying climate-smart and regenerative practices in smallholder agricultural communities across the Global South. He has presented on soil biology and regenerative agriculture at venues ranging from COP28 to regional farming cooperatives.</p>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "16px 0 0" }}>As founder of Holobiont Hub, Adam has built a global community around open-access soil science education and regenerative practice. His combination of rigorous research credentials, field experience in developing-world agriculture, and commitment to accessible science communication makes him the ideal architect of Ra\u00edz&apos;s verification methodology and certification standard.</p>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "20px 0 0" }}>Dr. Cobb brings deep scientific expertise in soil ecology, mycorrhizal biology, and regenerative land management to Raíz. He holds a PhD in Natural Resource Ecology and Management from Oklahoma State University, where he served as a postdoctoral research fellow and graduate faculty member for over a decade. His research has produced more than 20 peer-reviewed publications and secured approximately $330,000 in competitive grants, including a USDA NIFA-AFRI Postdoctoral Fellowship.</p>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "16px 0 0" }}>Adam&apos;s work extends well beyond the lab. He currently consults with international organizations including the African Cotton Foundation, Aid by Trade Foundation, and Cotton Made in Africa — deploying climate-smart and regenerative practices in smallholder agricultural communities across the Global South. He has presented on soil biology and regenerative agriculture at venues ranging from COP28 to regional farming cooperatives.</p>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#555", lineHeight: 1.8, margin: "16px 0 0" }}>As founder of Holobiont Hub, Adam has built a global community around open-access soil science education and regenerative practice. His combination of rigorous research credentials, field experience in developing-world agriculture, and commitment to accessible science communication makes him the ideal architect of Raíz&apos;s verification methodology and certification standard.</p>
                 <div style={{ display: "flex", gap: 16, marginTop: 24, flexWrap: "wrap" }}>
-                  {["Ph.D. Natural Resource Ecology \u2014 Oklahoma State", "USDA NIFA-AFRI Fellow", "20+ Peer-Reviewed Publications", "COP28 Presenter", "Cotton Made in Africa Consultant"].map((tag, i) => (
+                  {["Ph.D. Natural Resource Ecology — Oklahoma State", "USDA NIFA-AFRI Fellow", "20+ Peer-Reviewed Publications", "COP28 Presenter", "Cotton Made in Africa Consultant"].map((tag, i) => (
                     <span key={i} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: COLORS.canopy, background: COLORS.creamDark, borderRadius: 20, padding: "6px 14px", letterSpacing: 0.3 }}>{tag}</span>
                   ))}
                 </div>
@@ -508,10 +508,10 @@ function Footer() {
       <div style={{ maxWidth: 1000, margin: "0 auto", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 40 }}>
         <div>
           <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 16 }}>
-            <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 24, color: COLORS.cream }}>Ra\u00edz</span>
+            <span style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 24, color: COLORS.cream }}>Raíz</span>
             <span style={{ width: 5, height: 5, borderRadius: "50%", background: COLORS.leafBright, display: "inline-block" }} />
           </div>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: "rgba(245,240,232,0.35)", lineHeight: 1.6, maxWidth: 300 }}>Regenerative agriculture platform. Extension, certification, carbon, and market access \u2014 integrated from the ground up.</p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, color: "rgba(245,240,232,0.35)", lineHeight: 1.6, maxWidth: 300 }}>Regenerative agriculture platform. Extension, certification, carbon, and market access — integrated from the ground up.</p>
         </div>
         <div style={{ display: "flex", gap: 48 }}>
           <div>
@@ -529,8 +529,8 @@ function Footer() {
         </div>
       </div>
       <div style={{ maxWidth: 1000, margin: "40px auto 0", paddingTop: 24, borderTop: "1px solid rgba(245,240,232,0.05)", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
-        <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: "rgba(245,240,232,0.2)" }}>\u00a9 2026 Ra\u00edz. All rights reserved.</span>
-        <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: "rgba(245,240,232,0.2)" }}>Guatemala \u00b7 Laos \u00b7 Coming soon: East Africa</span>
+        <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: "rgba(245,240,232,0.2)" }}>© 2026 Raíz. All rights reserved.</span>
+        <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: "rgba(245,240,232,0.2)" }}>Guatemala · Laos · Coming soon: East Africa</span>
       </div>
     </footer>
   );
