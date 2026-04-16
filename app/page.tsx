@@ -332,7 +332,7 @@ function Projects({ id }: { id: string }) {
                     <span key={ti} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, color: COLORS.canopy, background: COLORS.creamDark, borderRadius: 16, padding: "4px 12px", letterSpacing: 0.3 }}>{tag}</span>
                   ))}
                 </div>
-                <button onClick={() => { setSelectedProject(p.title); setSubmitted(false); setShowGeneralFund(false); }} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: COLORS.cream, background: COLORS.canopy, border: "none", borderRadius: 8, padding: "12px 28px", cursor: "pointer", letterSpacing: 0.5, transition: "all 0.3s" }}
+                <button onClick={() => { setSelectedProject(p.title); setSubmitted(false); setShowGeneralFund(false); setTimeout(() => document.getElementById("application-form")?.scrollIntoView({ behavior: "smooth", block: "center" }), 100); }} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: COLORS.cream, background: COLORS.canopy, border: "none", borderRadius: 8, padding: "12px 28px", cursor: "pointer", letterSpacing: 0.5, transition: "all 0.3s" }}
                 onMouseEnter={e => { (e.target as HTMLElement).style.opacity = "0.9"; }}
                 onMouseLeave={e => { (e.target as HTMLElement).style.opacity = "1"; }}
                 >Apply to Fund This Project</button>
@@ -345,7 +345,7 @@ function Projects({ id }: { id: string }) {
           <div style={{ background: "rgba(201,162,39,0.06)", borderRadius: 16, padding: "36px 40px", border: "1px solid rgba(201,162,39,0.15)", textAlign: "center", marginBottom: 40 }}>
             <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: 24, color: COLORS.soil, fontWeight: 400, margin: "0 0 12px" }}>General Fund</h3>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: "#777", lineHeight: 1.7, maxWidth: 500, margin: "0 auto 20px" }}>Not sure which project to support? Contribute to our general fund and we&apos;ll allocate your investment across active projects based on the greatest community need.</p>
-            <button onClick={() => { setShowGeneralFund(true); setSelectedProject(null); setSubmitted(false); }} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: COLORS.soil, background: COLORS.goldLight, border: "none", borderRadius: 8, padding: "12px 28px", cursor: "pointer", letterSpacing: 0.5, transition: "all 0.3s" }}
+            <button onClick={() => { setShowGeneralFund(true); setSelectedProject(null); setSubmitted(false); setTimeout(() => document.getElementById("application-form")?.scrollIntoView({ behavior: "smooth", block: "center" }), 100); }} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 600, color: COLORS.soil, background: COLORS.goldLight, border: "none", borderRadius: 8, padding: "12px 28px", cursor: "pointer", letterSpacing: 0.5, transition: "all 0.3s" }}
             onMouseEnter={e => { (e.target as HTMLElement).style.background = COLORS.gold; }}
             onMouseLeave={e => { (e.target as HTMLElement).style.background = COLORS.goldLight; }}
             >Apply for General Partnership</button>
@@ -354,7 +354,7 @@ function Projects({ id }: { id: string }) {
 
         {(selectedProject || showGeneralFund) && (
           <FadeIn>
-            <div style={{ maxWidth: 600, margin: "0 auto", background: "white", borderRadius: 16, padding: 48, border: "1px solid rgba(26,26,14,0.08)", boxShadow: "0 8px 40px rgba(26,26,14,0.06)" }}>
+            <div id="application-form" style={{ maxWidth: 600, margin: "0 auto", background: "white", borderRadius: 16, padding: 48, border: "1px solid rgba(26,26,14,0.08)", boxShadow: "0 8px 40px rgba(26,26,14,0.06)" }}>
               {submitted ? (
                 <div style={{ textAlign: "center", padding: "20px 0" }}>
                   <div style={{ fontSize: 48, marginBottom: 16 }}>🌱</div>
